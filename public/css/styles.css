@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #0e447a;
+    --accent-color: #089eca;
+    --secondary-color: #444;
+}
+
+body {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Header */
+header {
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0.4rem;
+    color: var(--primary-color);
+}
+
+header p {
+    margin: 0.4rem;
+    color: var(--secondary-color);
+    font-size: 1.38rem;
+    font-weight: 700;
+}
+
+hr {
+    width: 55px;
+    height: 5px;
+    border: none;
+    margin: 1rem auto;
+    background-color: var(--primary-color);
+}
+
+/* main content */
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    min-height: calc(100vh - 155px - 91px);
+}
+
+/* Shortened URLS */
+.urls {
+    margin: 1.5rem auto;
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    color: var(--secondary-color);
+}
+
+.urls a {
+    color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+}
+
+.urls .base-url {
+    margin: 2rem 0.2rem 1.5rem 0.2rem;
+    margin-top: 2.5rem;
+}
+
+.urls .base-url p {
+    font-weight: 600;
+}
+
+.urls .base-url a {
+    display: block;
+    margin: 0.4rem auto;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.urls .short-url {
+    margin: 2rem 0.2rem 0.8rem 0.2rem;
+}
+
+.urls .short-url p {
+    font-weight: 600;
+}
+
+.urls .short-url a {
+    display: block;
+    color: var(--accent-color);
+    margin: 0.4rem auto;
+}
+
+/* Form */
+.form-group {
+    margin: 2rem 0.4rem;
+}
+
+label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+input {
+    margin: 0.5rem auto;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    outline: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0.1rem;
+}
+
+input:focus {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Error message if any */
+.error-message {
+    color: crimson;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.btn:active,
+.btn:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    color: var(--secondary-color);
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+footer a:hover,
+footer a:visited {
+    color: var(--accent-color);
+}
+
+footer p {
+    margin: 0.6rem;
+}
+
+/* Error (404) page */
+.error {
+    margin-top: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.error p {
+    padding: 1rem;
+    color: var(--accent-color);
+}
+
+.error a {
+    margin: 1rem;
+    color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+}

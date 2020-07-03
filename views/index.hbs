@@ -4,12 +4,55 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Shortify - A minimalist URL Shortner">
+	<meta name="theme-color" content="#0e447a">
+	<link rel="shortcut icon" href="img/icon.png" type="image/png" sizes="16x16">
 	<title>Shortify</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-	<h1>{{ title }}</h1>
+	{{>header}}
+
+	<main class="container">
+		<img src="img/logo.svg" alt="logo" height="120px">
+
+		{{#if data}}
+		<div class="urls">
+			<div class="base-url">
+				<p>Original URL</p>
+				<a href="#" target="_blank">
+					http://somewebsitewhichislong.com/thisgoesonandon/about/me
+				</a>
+
+			</div>
+			<hr>
+			<div class="short-url">
+				<p>Shortened URL</p>
+				<a href="http://shortify.herokuapp.com/12344" target="_blank" class="copy-text">
+					http://shortify.herokuapp.com/123442345
+				</a>
+
+			</div>
+			<a href="/">Back</a>
+		</div>
+		{{else}}
+		<form action="/shorten" method="post">
+			<div class="form-group">
+				<label for="url">URL</label>
+				<input type="text" placeholder="http://www.example.com" id="url" name="url" required="true"
+					autocomplete="off">
+
+				{{#if error }}
+				<p class="error-message">*Pls submit a valid URL</p>
+				{{/if}}
+			</div>
+			<button class="btn" type="submit">Shortify</button>
+		</form>
+		{{/if}}
+	</main>
+	{{>footer}}
+
 </body>
 
 </html>
