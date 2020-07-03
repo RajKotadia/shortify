@@ -14,7 +14,9 @@ const url = require('./routes/url');
 const app = express();
 
 // add middleware
+app.use(express.json({ extended: false }));
 app.use(express.static('public'));
+// register the routes
 app.use('/', url);
 
 // set up view engine and its config
