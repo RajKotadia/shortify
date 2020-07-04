@@ -9,13 +9,12 @@ require('./db/dbConnection');
 
 // the routes
 const url = require('./routes/url');
-const ShortUrl = require('./models/ShortUrl');
 
 // initialize the app
 const app = express();
 
 // add middleware
-// app.use(express.json());
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
