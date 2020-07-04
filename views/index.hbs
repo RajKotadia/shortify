@@ -17,34 +17,25 @@
 	<main class="container">
 		<img src="img/logo.svg" alt="logo" height="120px">
 
-		{{#if data}}
+		{{#if success}}
 		<div class="urls">
-			<div class="base-url">
-				<p>Original URL</p>
-				<a href="#" target="_blank">
-					http://somewebsitewhichislong.com/thisgoesonandon/about/me
-				</a>
-
-			</div>
-			<hr>
 			<div class="short-url">
 				<p>Shortened URL</p>
-				<a href="http://shortify.herokuapp.com/12344" target="_blank" class="copy-text">
-					http://shortify.herokuapp.com/123442345
+				<a href={{ shortURL }} target="_blank">
+					{{ shortURL }}
 				</a>
-
 			</div>
 			<a href="/">Back</a>
 		</div>
 		{{else}}
-		<form action="/shorten" method="post">
+		<form action="/shorten" method="POST" class="url-form">
 			<div class="form-group">
 				<label for="url">URL</label>
-				<input type="text" placeholder="http://www.example.com" id="url" name="url" required="true"
+				<input type="url" placeholder="http://www.example.com" id="url" name="url" required="true"
 					autocomplete="off">
 
 				{{#if error }}
-				<p class="error-message">*Pls submit a valid URL</p>
+				<p class="error-message">*Please provide a valid URL</p>
 				{{/if}}
 			</div>
 			<button class="btn" type="submit">Shortify</button>

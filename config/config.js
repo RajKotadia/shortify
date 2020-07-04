@@ -6,10 +6,12 @@ if (env === 'production') {
     module.exports = {
         mongoURI: process.env.MONGO_URI,
         port: process.env.PORT,
+        baseURL: '',
     };
 } else {
     module.exports = {
         mongoURI: 'mongodb://localhost:27017/Shortify',
         port: 3000,
+        baseURL: 'http://localhost:3000',
     };
 }

@@ -16,6 +16,7 @@
         "hbs": "^4.1.1",
         "install": "^0.13.0",
         "mongoose": "^5.9.21",
-        "shortid": "^2.2.15"
+        "shortid": "^2.2.15",
+        "validator": "^13.1.1"
     }
 }

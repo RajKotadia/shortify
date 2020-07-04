@@ -50,40 +50,28 @@ hr {
     min-height: calc(100vh - 155px - 91px);
 }
 
+.container img {
+    margin: 1rem auto;
+}
+
 /* Shortened URLS */
 .urls {
     margin: 1.5rem auto;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     word-wrap: break-word;
     color: var(--secondary-color);
 }
 
 .urls a {
     color: var(--primary-color);
-    padding: 0.4rem 0.8rem;
-}
-
-.urls .base-url {
-    margin: 2rem 0.2rem 1.5rem 0.2rem;
-    margin-top: 2.5rem;
-}
-
-.urls .base-url p {
-    font-weight: 600;
-}
-
-.urls .base-url a {
-    display: block;
-    margin: 0.4rem auto;
-    color: var(--primary-color);
-    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 0.4rem;
 }
 
 .urls .short-url {
-    margin: 2rem 0.2rem 0.8rem 0.2rem;
-}
-
-.urls .short-url p {
+    margin: 3rem 0.2rem 0.8rem 0.2rem;
     font-weight: 600;
 }
 
@@ -138,7 +126,10 @@ input:focus {
 .btn:active,
 .btn:hover {
     background-color: var(--accent-color);
-    color: #ffffff;
+}
+
+.btn:visited {
+    background-color: var(--primary-color);
 }
 
 /* Footer */
@@ -169,12 +160,19 @@ footer p {
     font-weight: 600;
 }
 
+.error .error-code {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
 .error p {
-    padding: 1rem;
+    /* padding: 1rem; */
     color: var(--accent-color);
 }
 
 .error a {
+    display: inline-block;
     margin: 1rem;
     color: var(--primary-color);
     padding: 0.4rem 0.8rem;

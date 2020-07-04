@@ -15,14 +15,16 @@ const ShortUrl = require('./models/ShortUrl');
 const app = express();
 
 // add middleware
-app.use(express.json({ extended: false }));
+// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
-// register the routes
-app.use('/', url);
 
 // set up view engine and its config
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
+
+// register the routes
+app.use('/', url);
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
