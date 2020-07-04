@@ -7,6 +7,7 @@ mongoose
     .connect(mongoURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useCreateIndex: true,
     })
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.log('Error connecting to MongoDB'));

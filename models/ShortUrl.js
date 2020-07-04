@@ -6,6 +6,9 @@ const Schema = mongoose.Schema;
 const ShortUrlSchema = new Schema({
     url: {
         type: String,
+        unique: true,
+        lowercase: true,
+        trim: true,
         required: true,
     },
     urlCode: {
