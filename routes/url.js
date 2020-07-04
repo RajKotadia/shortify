@@ -10,10 +10,16 @@ const router = express.Router();
 // the index page
 router.get('/', async (req, res) => {
     const query = req.query;
+    const context = {};
 
     // check if the url contains a query string
-    if (query) {
-        return res.render('index', query);
+    if (query.success === 'true') {
+        context.success = true;
+        context.shortURL = `${baseURL}/${query.code}`;
+        return res.render('index', context);
+    } else if (query.error === 'true') {
+        context.error = true;
+        return res.render('index', context);
     }
 
     res.render('index');
@@ -22,7 +28,6 @@ router.get('/', async (req, res) => {
 // to shorten a url
 router.post('/shorten', async (req, res) => {
     const url = req.body.url.toLowerCase();
-    console.log(url);
 
     // check if the url submitted is correct
     const result = validator.isURL(url, {
@@ -52,7 +57,7 @@ router.post('/shorten', async (req, res) => {
         // oncewe have the code redirect it to index page
         const query = querystring.stringify({
             success: true,
-            shortURL: `${baseURL}/${shortURL.urlCode}`,
+            code: shortURL.urlCode,
         });
 
         res.redirect(`/?${query}`);
