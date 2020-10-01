@@ -14,11 +14,9 @@ const ShortUrlSchema = new Schema({
     urlCode: {
         type: String,
         default: shortid.generate,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
+    }
+}, {
+    timestamps: true
 });
 
 const ShortUrl = mongoose.model('ShortUrl', ShortUrlSchema);
