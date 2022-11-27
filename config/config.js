@@ -6,7 +6,7 @@ if (env === 'production') {
     module.exports = {
         mongoURI: process.env.MONGO_URI,
         port: process.env.PORT,
-        baseURL: 'https://shortifyit.herokuapp.com',
+        baseURL: 'https://shortify.cyclic.app',
     };
 } else {
     module.exports = {
