@@ -2,7 +2,7 @@
 
 A minimalist URL Shortner using Node.js, Express framework, MongoDB and Handlebars templating engine.
 
-> Check it out - https://shortifyit.herokuapp.com
+> Check it out - https://shortify.cyclic.app
 
 ## To run it locally
 
